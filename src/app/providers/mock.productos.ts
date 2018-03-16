@@ -1,82 +1,75 @@
-export class MOCKS_COCHES {
+export class MOCKS_PRODUCTOS {
 
     static stock = `[{
-        "nombre":"KAIKU esnea",
-        "precio":1.25,
-        "peso":"(1.25€/Litro)",
-        "foto":"http://www.supereko.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/s/dsc03731.png",
-        "oferta":false,
+		"nombre": "KAIKU esnea",
+		"precio": 1.25,
+		"peso": "(1.25€/Litro)",
+		"foto": "http://www.supereko.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/s/dsc03731.png",
+		"oferta": false
 	},
 	{
-		"nombre":"Arroz SOS",
-        "precio":1.50,
-        "peso":"(1.75€/Kg)",
-        "foto":"https://static.carrefour.es/hd_1600x_/supermercado/bcc_static/catalogImages/product/002277/002277.png",
-        "oferta":true,
+		"nombre": "Arroz SOS",
+		"precio": 1.50,
+		"peso": "(1.75€/Kg)",
+		"foto": "https://static.carrefour.es/hd_1600x_/supermercado/bcc_static/catalogImages/product/002277/002277.png",
+		"oferta": true
 	},
 	{
-        "nombre":"Atun claro ISABEL",
-        "precio":3.05,
-        "peso":"(12.71€/Kg)",
-        "foto":"https://imgbm.carritustechnology.com/productos/A01545_00.jpg?t=20180302030723",
-        "oferta":false,
+		"nombre": "Atun claro ISABEL",
+		"precio": 3.05,
+		"peso": "(12.71€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A01545_00.jpg?t=20180302030723",
+		"oferta": false
 	},
 	{
-		"nombre":"Biocentury",
-        "precio":1.39,
-        "peso":"(10.69€/kg)",
-        "foto":"http://www.supereko.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/s/dsc03731.png",
-        "oferta":false,
+		"nombre": "Biocentury",
+		"precio": 1.39,
+		"peso": "(10.69€/kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A12669_00.jpg?t=20180313032526",
+		"oferta": true
 	},
 	{
-		"id": 555,
-		"marca": "Citroen",
-		"modelo": "Palace",
-		"version": "7.0",
-		"foto": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Citroen_GS_Pallas_1977.jpg",
-		"puertas": 5,
-		"caballos": 340,
-		"consumo": 28
+		"nombre": "Cerveza Voll Damm",
+		"precio": 1.49,
+		"peso": "(2.26€/Litro)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A08130_00.jpg?t=20180315031828",
+		"oferta": false
 	},
 	{
-		"id": 20,
-		"marca": "Seat",
-		"modelo": "Leon",
-		"version": "1.2 TSI",
-		"foto": "https://www.coches.com/fotos_historicas/seat/Leon/high_6aad986865df7a9bb8fc5f05398fd423.jpg",
-		"puertas": 5,
-		"caballos": 110,
-		"consumo": 6.1
+		"nombre": "Salsa Old El Paso",
+		"precio": 2.78,
+		"peso": "(8.91€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A28032_00.jpg?t=20180315031756",
+		"oferta": false
 	},
 	{
-		"id": 22,
-		"marca": "Renault",
-		"modelo": "Clio",
-		"version": "2.0",
-		"foto": "https://www.renault.es/gama-renault/renault-vehiculos-turismos/gama-clio/clio/boites-fermees/att1441077990b5451eab7bfd355bebef5d/renault-clio-fase2-galeria08_ok.jpg",
-		"puertas": 3,
-		"caballos": 120,
-		"consumo": 7
+		"nombre": "Pasta oriental Maggi",
+		"precio": 0.61,
+		"peso": "(8€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A14950_00.jpg?t=20180207030830",
+		"oferta": false
 	},
 	{
-		"id": 35,
-		"marca": "Bugatti",
-		"modelo": "Chiron",
-		"version": "Cupé",
-		"foto": "https://www.diariomotor.com/imagenes/picscache/1920x1600c/bugatti-chiron-2016-mas-p2_1920x1600c.jpg",
-		"puertas": 3,
-		"caballos": 1500,
-		"consumo": 190
+		"nombre": "Queso oveja Kamiku",
+		"precio": 14.99,
+		"peso": "(16€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A40070_00.jpg?t=20180302030456",
+		"oferta": true
 	},
 	{
-		"id": 38,
-		"marca": "Golf",
-		"modelo": "Gti",
-		"version": " 2.0 TSI",
-		"foto": "http://www.vw.com/content/dam/vwcom/modelImages/GTI/2018/highlights/GTI-18-0633-Dig_3x2.png",
-		"puertas": 5,
-		"caballos": 230,
-		"consumo": 6.30
+		"nombre": "Dalky chocolate",
+		"precio": 1.68,
+		"peso": "(2.38€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A49036_00.jpg?t=20180315031759",
+		"oferta": false
+	},
+	{
+		"nombre": "Galleta Maria",
+		"precio": 1.55,
+		"peso": "(1.94€/Kg)",
+		"foto": "https://imgbm.carritustechnology.com/productos/A30358_00.jpg?t=20180315031757",
+		"oferta": false
 	}
+
 ]`;
 }

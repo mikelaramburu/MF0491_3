@@ -1,3 +1,32 @@
 <p>
-  supermercado works!
+  {{stock |json}}
 </p>
+
+<div class="container">
+
+        <div *ngFor="let producto of stock">
+          <div class="producto">
+          
+            <img src={{producto.imagen}} alt={{producto.nombre}}>
+            <div class="precios">
+              <span class = "precio">{{producto.precio}}€</span>
+            
+            </div>
+            
+            <div class="nombre">
+              <span>{{producto.nombre}}</span>
+            </div>
+            <div>
+              <button type="button" class="btn btn-default glyphicon glyphicon-minus"></button>
+                 <input type="number" disabled value="1">
+              <button type="button" class="btn btn-default glyphicon glyphicon-plus"></button>
+            </div>
+      
+            <button type="button" class="btn btn-success btn-block">Añadir al carro</button>
+          </div>
+         
+        </div>
+      </div>
+     
+      
+

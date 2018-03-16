@@ -7,16 +7,18 @@ export class Producto{
     foto:string;
     oferta:boolean;
 
-    constructor(){
-        {     
+    constructor(nombre:string, precio:number, peso:string,foto?:string,){
             console.log("Constructor Producto");
-            this.nombre="";
-            this.precio=0;
-            this.peso="";
-            this.foto="assets/img/default_product.png";
+            this.nombre=nombre;
+            this.precio=precio;
+            this.peso=peso;
+            if ( foto ){
+                this.foto = foto;
+            }else{
+                this.foto = 'assets/img/default_product.png';
+            }               
             this.oferta=false; //por defecto el producto no estara en oferta
           
         }
         
     }
-}
