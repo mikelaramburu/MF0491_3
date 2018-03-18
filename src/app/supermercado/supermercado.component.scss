@@ -1,10 +1,40 @@
 .buscador{
-    input{
-          display: inline;
-         
-    }
+    display: inline-flex;
+    padding-top: 8px;
+    
+    input{          
+          width: 350px;
+         }
 }
 
+.carrito{
+    float: right;
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-right: 50px;
+    font-size: 35px;
+    background-color: #88CC88;
+    color: white;
+}
+#precios{
+        .precio{
+            font-size: 1.8em;
+            color: red;
+            text-decoration: line-through;
+        }
+        .precioRebajado{
+            position: absolute;
+            top: 55%;
+            right: 31%;
+            font-size: 1.8em;
+            color: green;        
+        }
+        .noprecio{
+            
+            font-size: 1.8em;
+            color: grey;
+        }
+}
 .imgProducto {
     max-width: 200px;
     position: relative;
@@ -23,6 +53,7 @@
         height: 30px;
         width: 50%;
         float: left;
+        text-align: center;
         }
     .btnMin {
         display: block;
@@ -38,29 +69,3 @@
         }
 }
 
-/* 
-.container{
-    background-color: black;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-.title{
-    padding-left: 319px;
-    font-size:1.5em;
-}
-
-.precio{
-    color:red;
-}
-.precio_unidad{
-    color:gray;
-}
-.noprecio{
-    color:black;
-}
-
-
-    
-.descuento {
-    height: 25px;
-} */
