@@ -1,8 +1,66 @@
-container{
-    display:flex;
-
-
-    .stock{
-        position:relative;
+.buscador{
+    input{
+          display: inline;
+         
     }
 }
+
+.imgProducto {
+    max-width: 200px;
+    position: relative;
+    z-index: 1;
+}
+.imgDescuento {
+    position: absolute;
+    z-index: 2;
+    top: -4%;
+    right: -12%;
+    max-width: 100px;
+}
+#botones{
+    .input{
+        display: block;
+        height: 30px;
+        width: 50%;
+        float: left;
+        }
+    .btnMin {
+        display: block;
+        width: 25%;
+        height: 29px;
+        float: left;
+        }
+   .btnPlus{
+        display: block;
+        width: 25%;
+        height: 29px;
+        float: left;
+        }
+}
+
+/* 
+.container{
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.title{
+    padding-left: 319px;
+    font-size:1.5em;
+}
+
+.precio{
+    color:red;
+}
+.precio_unidad{
+    color:gray;
+}
+.noprecio{
+    color:black;
+}
+
+
+    
+.descuento {
+    height: 25px;
+} */

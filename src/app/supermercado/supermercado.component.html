@@ -1,35 +1,68 @@
 <!-- <p>
   {{stock |json}}
 </p> -->
-<div class="row">
-        <div class="col-md-6">
-<div class="container">
 
-        <div *ngFor="let producto of stock">
-          <div class="thumbnail">
-          
-            <img src={{producto.foto}} alt={{producto.nombre}}>
-            <div class="precios">
-              <span class = "precio">{{producto.precio}}€</span>
-            
-            </div>
-            
-            <div class="nombre">
-              <span>{{producto.nombre}}</span>
-            </div>
-            <div>
-              <button type="button" class="btn btn-default glyphicon glyphicon-minus"></button>
-                 <input type="number" disabled value="1">
-              <button type="button" class="btn btn-default glyphicon glyphicon-plus"></button>
-            </div>
-      
-            <button type="button" class="btn btn-success btn-block">Añadir al carro</button>
-          </div>
-         
+<!-- <div class="row">
+  <span class="title">supermercado  <input type="search" [(ngModel)]="searchText" ></span><span class="glyphicon glyphicon-search"></span>
+</div> -->
+<!-- <div class="buscador">
+  <input type="search" [(ngModel)]="searchText" placeholder="Escriba el nombre del producto que desea buscar...">
+
+</div> -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Supermercado</a>
+      <div class="buscador">
+        <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Escriba el nombre del producto que desea buscar...">
+        <button>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <div class="carrito">
+          <span class="badge">{{totalProductos}}</span><i class="fa fa-shopping-basket" aria-hidden="true">{{sumaPrecio}}</i>
         </div>
       </div>
     </div>
-</div>
-     
-      
 
+
+
+  </div>
+</nav>
+<div class="row">
+
+  <div class="col-sm-10">
+    <div class=container>
+      <div *ngFor="let producto of stock | buscadorProductos : searchText" class="col-sm-3">
+
+        <div class="thumbnail">
+
+          <img class="imgProducto" src={{producto.foto}} alt={{producto.nombre}}>
+          <p *ngIf="producto.oferta" class="precio">
+            <img class="imgDescuento" src="http://www.yotengo.es/icons/foto_oferta.png" alt="oferta.img"> </p>
+          <div class="caption">
+
+            <div class="precios">
+              <p *ngIf="producto.oferta" class="precio">{{producto.precio}}, {{producto.precioConOferta}} </p>
+              <p *ngIf="!producto.oferta" class="noprecio">{{producto.precio}} </p>
+              <p class="precioUnidad">({{producto.precioUnidad}})</p>
+            </div>
+
+            <div class="nombre">
+              <span>{{producto.nombre}}</span>
+            </div>
+            <div id="botones">
+              <button type="button" id="btnMinPlus" class="btnMin btn-default glyphicon glyphicon-minus" (click)="restar(producto)"></button>
+              <input type="number" class="input" disabled [value]="producto.cantidad">
+              <button type="button" id="btnMinPlus" class="btnPlus btn-default glyphicon glyphicon-plus"(click)="sumar(producto)"></button>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-success btn-block">Añadir al carro</button>
+
+          <!--  <button type="button" class="btn btn-success btn-block"
+           (click)="añadirProducto(producto)">Añadir al carro</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

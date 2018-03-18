@@ -25,10 +25,13 @@ export class ProductosService {
     jsonData.forEach(element => {   
       
         producto = new Producto(
-                                element.nombre, 
-                                element.precio, 
-                                element.peso,
-                                element.foto                              
+                                element.nombre,
+                                element.foto, 
+                                element.oferta,
+                                element.precio,
+                                element.precioUnidad,
+                                element.precioConOferta,
+                                element.cantidad                              
                                 );
 
         this.productos.push(producto);
