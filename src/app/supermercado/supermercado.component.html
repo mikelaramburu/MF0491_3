@@ -35,7 +35,7 @@
               <p *ngIf="producto.oferta" class="precio">{{producto.precio}}€</p>
               <p *ngIf="producto.oferta" class="precioRebajado">{{producto.precioConOferta}}€</p>
               <p *ngIf="!producto.oferta" class="noprecio">{{producto.precio}}€ </p>
-              <p class="precioUnidad">({{producto.precioUnidad}})</p>
+              <p class="precioUnidad">{{producto.precioUnidad}}</p>
             </div>
 
             <div class="nombre">
@@ -48,7 +48,8 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-success btn-block">Añadir al carro</button>
+          <!-- <button type="button" class="btn btn-success btn-block" (click)="añadirProducto(event)">Añadir al carro</button> -->
+          <button type="button" class="btn btn-success btn-block" >Añadir al carro</button>
           <!-- fin de pintado del producto -->
         </div>
         <!-- cierre thumbnail -->

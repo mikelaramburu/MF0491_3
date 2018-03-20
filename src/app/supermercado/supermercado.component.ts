@@ -45,7 +45,14 @@ export class SupermercadoComponent implements OnInit {
   }
 
   restar(producto){
-    producto.cantidad--;
+    
+    if (producto.cantidad >1){
+      producto.cantidad--;
+    }else{
+      producto.cantidad=1
+    }
+   
+    
     console.log('producto %o', producto.cantidad);
   }
 
