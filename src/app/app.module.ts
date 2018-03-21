@@ -13,13 +13,15 @@ import { SupermercadoComponent } from './supermercado/supermercado.component';
 
 //Pipes
 import { BuscadorPipe } from './pipes/buscador.pipe';
+import { CarritoComponent } from './supermercado/carrito/carrito.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SupermercadoComponent,
-    BuscadorPipe
+    BuscadorPipe,
+    CarritoComponent
     
   ],
   

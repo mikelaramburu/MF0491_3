@@ -13,17 +13,20 @@ export class SupermercadoComponent implements OnInit {
   stock: Array<Producto>; //Cast al Producto  
   producto: Producto;
   carro = [];
-  totalProductos: number;
-  sumaPrecio: number;
+  precioRebajado:number;
+  totalProductos:number;
+  sumaPrecio:number;
 
   //Campo del filtro
   searchText: string;
 
+  
   constructor(public productosService: ProductosService) {
     console.log('SupermercadoComponent constructor');
-
-    this.producto = new Producto("", "", false, 0, "", 0, 1);
-    this.stock = new Array<Producto>();
+    
+    this.stock = new Array<Producto>(); 
+    this.producto = new Producto(); //Valores por defecto del constructror sobre un producto
+    this.carro=[]; //inicialización de array vacio para ir sumando los productos añadidos
     this.totalProductos = 0;
     this.sumaPrecio = 0;
 
@@ -45,38 +48,53 @@ export class SupermercadoComponent implements OnInit {
   }
 
   restar(producto){
-    
     if (producto.cantidad >1){
       producto.cantidad--;
     }else{
       producto.cantidad=1
     }
-   
-    
     console.log('producto %o', producto.cantidad);
   }
 
-  añadirProducto(producto) {
+  anadirProducto(producto) {
     console.log('producto %o', producto.cantidad);
-    //let i =new Producto();
-    this.carro.forEach(i => {
-      if (i.id == producto.id) {
-        i.cantidad = i.cantidad + producto.cantidad;
+    
+    let anadido:boolean=false;
+    this.carro.forEach(p => {
+      if (producto.nombre == p.nombre) {
+        p.cantidad += p.cantidad+producto.cantidad;
+        anadido=true
       }
     });
+    
+    if (!anadido){
+      this.nuevoProducto(producto);
+    }
 
     this.sumaTotal();
     producto.cantidad = 1;
     console.log('carro %o', this.carro);
   }
-
+  
+  nuevoProducto(producto){
+    let prodNuevo = new Producto();
+    prodNuevo.nombre = producto.nombre;
+    prodNuevo.foto = producto.foto;
+    prodNuevo.oferta = producto.oferta;
+    prodNuevo.cantidad = producto.cantidad;  
+    prodNuevo.precio=producto.precio;
+    prodNuevo.precioUnidad=producto.precioUnitario; 
+    prodNuevo.precioConOferta=producto.precioConOferta;
+    
+    this.carro.push(prodNuevo);
+  }
   sumaTotal() {
     this.totalProductos = 0;
     this.sumaPrecio = 0;
-    let precioOferta = 0;
-    this.carro.forEach(i => {
-      this.totalProductos += i.cantidad;
-      this.sumaPrecio += parseFloat((i.precio * i.cantidad).toFixed(2));
+    let precioConOferta = 0;
+    this.carro.forEach(producto => {
+      this.totalProductos += producto.cantidad;
+      this.sumaPrecio += parseFloat((producto.precio * producto.cantidad).toFixed(2));
     });
   }
 

@@ -9,7 +9,21 @@ export class Producto {
     precioConOferta: number;
     cantidad: number;
 
-    constructor(
+    //constructor sin valores asignados
+    constructor() {
+        console.log('Producto class constructor');
+
+        this.nombre='Producto desconocido';
+        this.foto='assets/img/default_product.png';
+        this.precio=0;
+        this.precioUnidad='0€/unidad';
+        this.oferta=false;
+        this.cantidad=1;
+    }
+    
+    
+    //constructor con valores asignados
+    /*constructor(
                 nombre: string,
                 foto: string,
                 oferta: boolean,
@@ -36,6 +50,6 @@ export class Producto {
                             this.precioConOferta = precio;
                         }
                     this.cantidad = 1;
-                }
+                }*/
 
 }

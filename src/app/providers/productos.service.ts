@@ -22,9 +22,9 @@ export class ProductosService {
     let producto;
     let jsonData = JSON.parse(MOCKS_PRODUCTOS.stock);
 
-    jsonData.forEach(element => {   
+    jsonData.forEach(p => {   
       
-        producto = new Producto(
+        /*producto = new Producto(
                                 element.nombre,
                                 element.foto, 
                                 element.oferta,
@@ -32,9 +32,9 @@ export class ProductosService {
                                 element.precioUnidad,
                                 element.precioConOferta,
                                 element.cantidad                              
-                                );
+                                );*/
 
-        this.productos.push(producto);
+        this.productos.push(p);
     });
    
     return this.productos;

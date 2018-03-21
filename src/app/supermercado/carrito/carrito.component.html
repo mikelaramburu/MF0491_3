@@ -1,0 +1,36 @@
+<form>
+    <li>
+      <div class="precioTotal">
+        <div class="row">
+          
+            <div class="col-xs-3 col-xs-offset-7">
+              <p>Subtotal</p>
+              <p>Descuentos</p>
+              <p>Total</p>
+            </div>
+            <div class="col-xs-2">
+              <p class="right">{{sumaPrecio | number:'.2-2'}}€</p>
+              <p class="right">0€</p>
+              <p class="right">{{sumaPrecio | number:'.2-2'}}€</p>
+            </div>
+          
+
+
+        </div>
+        <div class="row">
+          <div class="col-xs-5">
+            <button class="btn btn-block " (click)="vaciarCesta()">
+              <span>
+                <i class="fa fa-trash-o" aria-hidden="true"></i> VACIAR CESTA</span>
+            </button>
+          </div>
+          <div class="col-xs-7">
+            <button class="btn btn-block btn-success">
+              <span>VER / TRAMITAR COMPRA</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </li>
+  </form>

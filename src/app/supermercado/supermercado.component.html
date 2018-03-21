@@ -10,10 +10,17 @@
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="carrito">
-      <span class="badge">{{totalProductos}}</span>
-      <i class="fa fa-shopping-basket" aria-hidden="true">{{sumaPrecio}}</i>
-    </div>
+    <li class="toogle">
+      <div class="carrito">
+        <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="badge">{{totalProductos}}</span>
+          <i class="fa fa-shopping-basket" aria-hidden="true">{{sumaPrecio}}€</i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <app-carrito></app-carrito>
+        </ul>
+      </div>
+    </li>
   </div>
 </nav>
 <!-- cierre barra -->
@@ -48,8 +55,8 @@
             </div>
           </div>
 
-          <!-- <button type="button" class="btn btn-success btn-block" (click)="añadirProducto(event)">Añadir al carro</button> -->
-          <button type="button" class="btn btn-success btn-block" >Añadir al carro</button>
+          <button type="button" class="btn btn-success btn-block" (click)="anadirProducto(producto)">Añadir al carro</button>
+          <!-- <button type="button" class="btn btn-success btn-block" >Añadir al carro</button> -->
           <!-- fin de pintado del producto -->
         </div>
         <!-- cierre thumbnail -->
