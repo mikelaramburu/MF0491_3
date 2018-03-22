@@ -11,13 +11,70 @@
       </button>
     </div>
     <li class="toogle">
-      <div class="carrito">
+      <div class="carro">
         <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <span class="badge">{{totalProductos}}</span>
           <i class="fa fa-shopping-basket" aria-hidden="true">{{sumaPrecio}}€</i>
         </div>
         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-          <app-carrito></app-carrito>
+          <!-- app-carro -->
+
+          <form>
+            <li *ngFor="let producto of carro">
+              <div class="producto-carro row">
+                <div class="img col-xs-2">
+                  <img src={{producto.foto}} alt={{producto.nombre}}>
+                </div>
+                <div class="datos col-xs-5">
+                  <p class="precio">{{producto.precio | number:'.2-2'}}€</p>
+                  <p>{{producto.nombre}}</p>
+                </div>
+                <div class="botones col-xs-3">
+                  <button type="button" class="btn btn-default izq" (click)="restarCarro(producto); calcularTotales()"> - </button>
+                  <input class="btn-default" [value]="producto.cantidad" disabled>
+                  <button type="button" class="btn btn-default dcha" (click)="sumar(producto); calcularTotales()"> + </button>
+                </div>
+                <div class="eliminar col-xs-2" (click)="eliminarProducto(producto)">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </div>
+              </div>
+            </li>
+            <!-- *ngFor -->
+            <li>
+              <div class="totales">
+                <div class="cuenta row">
+                  
+                    <div class="col-xs-3 col-xs-offset-7">
+                      <p>Subtotal:</p>
+                      <p>Descuento:</p>
+                      <p>Total:</p>
+                    </div>
+                    <div class="col-xs-2">
+                      <p class="right">{{sumaPrecio | number:'.2-2'}}€</p>
+                      <p class="right">0€</p>
+                      <p class="right">{{sumaPrecio | number:'.2-2'}}€</p>
+                    </div>
+                  
+
+
+                </div>
+                <div class="row tramitar">
+                  <div class="col-xs-5">
+                    <button class="btn btn-block vaciar" (click)="vaciarCarro()">
+                      <span>
+                        <i class="fa fa-trash-o" aria-hidden="true"></i> VACIAR CESTA</span>
+                    </button>
+                  </div>
+                  <div class="col-xs-7">
+                    <button class="btn btn-block btn-success">
+                      <span>VER / TRAMITAR COMPRA</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </form>
         </ul>
       </div>
     </li>

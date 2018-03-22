@@ -13,7 +13,7 @@ import { SupermercadoComponent } from './supermercado/supermercado.component';
 
 //Pipes
 import { BuscadorPipe } from './pipes/buscador.pipe';
-import { CarritoComponent } from './supermercado/carrito/carrito.component';
+//import { CarritoComponent } from './supermercado/carrito/carrito.component';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { CarritoComponent } from './supermercado/carrito/carrito.component';
     AppComponent,
     SupermercadoComponent,
     BuscadorPipe,
-    CarritoComponent
+   // CarritoComponent
     
   ],
   
